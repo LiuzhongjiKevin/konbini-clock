@@ -1,1 +1,1 @@
-{"name":"ame-konbini-selfhost","version":"1.0.0","private":true,"type":"module","engines":{"node":">=22.12.0"},"scripts":{"start":"node server/index.js","test":"node --test tests/*.test.mjs"}}
+{"name":"ame-konbini-selfhost","version":"1.0.0","private":true,"license":"MIT","type":"module","engines":{"node":">=22.12.0"},"scripts":{"start":"node server/index.js","test":"node --test tests/*.test.mjs"}}

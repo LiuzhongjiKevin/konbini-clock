@@ -1,8 +1,20 @@
 # 雨町 · 深夜便利店（独立部署版）
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 一个可以自己部署的 Three.js 便利店小场景。
 
 页面会按照北京时间自动切换早上、中午、黄昏和夜晚，并通过服务端调用高德天气 API，把北京市实时天气映射为晴天、雨天或雪天。你也可以关闭“自动”开关，用页面右上角的滑块手动切换场景。
+
+## 用 Codex、Claude Code 等智能体部署
+
+在 Codex、Claude Code、Cursor 等编码智能体中打开本项目目录，然后直接复制下面这段话发送给智能体：
+
+```text
+请帮我在本机部署当前目录中的 konbini-clock 项目。先阅读 README.md 和 .env.example，检查 Docker 与 Docker Compose 是否可用。如果 .env 不存在，请复制 .env.example 创建 .env；不要读取、显示、提交或上传我的真实 AMAP_WEATHER_KEY，只提示我在本地编辑 .env，并等待我确认已经填写完成。确认后运行 docker compose up -d --build，检查 docker compose ps、/healthz 和 /api/weather，最后告诉我正确的访问地址和检查结果。未经我明确同意，不要删除容器、镜像或其他文件。
+```
+
+智能体提示你填写 Key 时，请只在本地 `.env` 文件中填写，不要把真实 Key 发送到聊天窗口。项目已经通过 `.gitignore` 和 `.dockerignore` 排除 `.env`，但仍应在每次提交前确认它没有进入 Git。
 
 ## 场景预览
 
@@ -333,6 +345,12 @@ server {
 - 不要把真实高德 Key 写进 `Dockerfile`、前端 JavaScript 或公开仓库。
 - `.env` 已经被 `.gitignore` 和 `.dockerignore` 排除。
 - 如果 Key 曾经公开，请立即到高德控制台重新生成，并按需设置调用限制。
+
+## 许可证
+
+本项目采用 [MIT License](LICENSE)。该许可证允许他人使用、复制、修改、分发和销售本软件，但必须保留版权声明与许可证文本。
+
+软件按“原样”提供，不附带任何明示或默示担保；完整的免责声明以 [`LICENSE`](LICENSE) 中的英文条款为准。MIT 的免责声明有助于限制责任，但不代表在所有司法辖区都能绝对免责；如项目用于高风险或商业场景，请咨询专业律师。
 
 ## 项目结构
 
