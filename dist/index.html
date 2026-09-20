@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091421"><title>雨町 · 深夜便利店</title><link rel="stylesheet" href="style.css"><script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script></head><body data-time="night" data-weather="rain"><main id="scene" aria-label="可旋转的雨夜便利店三维场景"></main><header><a class="brand" href="./"><span class="mark">雨</span><span>雨町<span class="en">AMEMACHI</span></span></a><div class="edition">A LITTLE WORLD, STILL AWAKE.<span>雨夜便利店 / 001</span></div></header><section class="title"><div class="eyebrow"><i></i> 深夜营业中</div><h1>在雨里，<br>留一盏灯。</h1><p>夜色很深，这里还亮着。</p></section><aside class="environment-controls" aria-label="场景时间和天气">
+<div class="weather-summary"><span class="weathericon" aria-hidden="true">☂</span><span id="environment-status" aria-live="polite">雨天 · 夜晚</span></div>
+<div class="auto-settings"><span id="beijing-clock">北京时间</span><label class="auto-toggle"><input id="auto-mode" type="checkbox" checked><span>自动</span></label></div>
+<p id="live-weather" role="status">正在连接天气 · 当前为演示天气</p>
+<div class="slider-row">
+<label for="time-slider">时间 <output id="time-value" for="time-slider">夜晚</output></label>
+<input id="time-slider" type="range" min="0" max="3" step="1" value="3" aria-valuetext="夜晚" style="--progress:100%">
+<div class="slider-labels" aria-hidden="true"><span>早上</span><span>中午</span><span>黄昏</span><span>夜晚</span></div>
+</div>
+<div class="slider-row">
+<label for="weather-slider">天气 <output id="weather-value" for="weather-slider">雨天</output></label>
+<input id="weather-slider" type="range" min="0" max="2" step="1" value="0" aria-valuetext="雨天" style="--progress:0%">
+<div class="slider-labels" aria-hidden="true"><span>雨天</span><span>下雪</span><span>晴天</span></div>
+</div>
+</aside><div id="loading">正在点亮雨夜…</div><div id="hint">点击玻璃门，进来避避雨</div><footer><div class="guide"><span>拖动旋转</span><b>·</b><span>滚动缩放</span></div><div class="controls"><button id="door" aria-pressed="false"><span>▯</span> 打开店门</button><span class="divider"></span><button id="sound" aria-pressed="false" aria-label="开启雨声"><span aria-hidden="true">♫</span> 开启雨声</button><button id="reset" title="复位视角" aria-label="复位视角">↺</button></div><span class="caption">每个晚归的人，都有一束光。</span></footer><script type="module" src="main.js"></script></body></html>
