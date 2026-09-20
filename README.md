@@ -8,10 +8,22 @@
 
 ## 用 Codex、Claude Code 等智能体部署
 
-在 Codex、Claude Code、Cursor 等编码智能体中打开本项目目录，然后直接复制下面这段话发送给智能体：
+在 Codex、Claude Code、Cursor 等编码智能体中打开一个用于存放项目的工作目录，然后直接复制下面这段话发送给智能体。提示词包含完整的 GitHub 地址，因此不需要提前下载本项目：
 
 ```text
-请帮我在本机部署当前目录中的 konbini-clock 项目。先阅读 README.md 和 .env.example，检查 Docker 与 Docker Compose 是否可用。如果 .env 不存在，请复制 .env.example 创建 .env；不要读取、显示、提交或上传我的真实 AMAP_WEATHER_KEY，只提示我在本地编辑 .env，并等待我确认已经填写完成。确认后运行 docker compose up -d --build，检查 docker compose ps、/healthz 和 /api/weather，最后告诉我正确的访问地址和检查结果。未经我明确同意，不要删除容器、镜像或其他文件。
+请帮我部署这个项目：
+
+https://github.com/LiuzhongjiKevin/konbini-clock
+
+请先把仓库克隆到一个新的 konbini-clock 目录；如果同名目录已经存在，不要覆盖，先检查它是否为该项目并告诉我。
+
+然后阅读 README.md 和 .env.example，检查 Docker 与 Docker Compose 是否可用。如果 .env 不存在，请复制 .env.example 创建 .env。
+
+不要读取、显示、提交或上传我的真实 AMAP_WEATHER_KEY。只提示我在本地编辑 .env，并等待我确认已经填写完成。
+
+确认后运行 docker compose up -d --build，检查 docker compose ps、/healthz 和 /api/weather，最后告诉我正确的访问地址和检查结果。
+
+未经我明确同意，不要删除或覆盖现有目录、容器、镜像或其他文件。
 ```
 
 智能体提示你填写 Key 时，请只在本地 `.env` 文件中填写，不要把真实 Key 发送到聊天窗口。项目已经通过 `.gitignore` 和 `.dockerignore` 排除 `.env`，但仍应在每次提交前确认它没有进入 Git。
